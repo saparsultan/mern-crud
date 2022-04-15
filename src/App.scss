@@ -1,0 +1,270 @@
+@import 'fonts/fonts.scss';
+
+* {
+  font-family: 'SFProDisplay', sans-serif;
+  box-sizing: border-box;
+}
+
+$base-color: #2e3058;
+$primary-color: #30b179;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: $base-color;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 40px 0;
+  background-color: $primary-color;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1300px;
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
+  padding: 0 50px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  &__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $primary-color;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 30px; 
+  }
+  &__item {
+    a {
+      font-size: 1rem;
+      color: $base-color;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.main-left {
+  &__subtitle {
+    display: inline-flex;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $primary-color;
+    background: rgba(48, 177, 121, .08);
+    border-radius: 50px;
+  }
+  &__title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 133%;
+    color: $base-color;
+  }
+  &__link {
+    display: inline-flex;
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 24px;
+    font-weight: 600;
+    color: $base-color;
+    border-radius: 50px;
+    border: 1px solid rgba(46, 48, 88, .3);
+    &:hover {
+      color:rgba(255, 255, 255, .9);
+      background-color: $primary-color;
+      border-color: $primary-color;
+    } 
+  }
+}
+
+.main-right {
+  max-width: 425px;
+  width: 100%;
+  &__title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  &__list {
+    padding-left: 20px;
+    list-style-type: disc;
+    li {
+      line-height: 188%;
+    }
+  }
+}
+
+.footer {
+  &__text {
+    margin: 0;
+    padding: 40px 0;
+    font-size: 20px;
+  }
+}
+
+
+.friends-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: auto;
+}
+
+.friends-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 250px;
+  width: 100%;
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__input {
+    outline: none;
+    border: none;
+    padding: 13px 20px;
+    font-size: 1rem;
+    line-height: 112%;
+    color: $base-color;
+    background-color: #f5f3f3;
+    border-radius: 8px;
+    &::placeholder {
+      color: rgba(46, 48, 88, .5);
+    }
+  }
+  &__btn {
+    outline: none;
+    border: none;
+    padding: 13px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color:#fff;
+    background-color: $primary-color;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+.friends-table {
+  width: 100%;
+  margin-left: 100px;
+  &__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    div {
+      padding-bottom: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: rgba(46, 48, 88, 0.5);
+      &:first-child {
+        width: 280px;
+      }
+      &:last-child {
+        margin-left: auto;
+        padding-right: 16px;
+      }
+    }
+  }
+  &__body {
+    height: 510px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+      background-color: #E9E9E9;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-color;
+    }
+  }
+  &__not-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    background-color: #FBFBFB;
+    border-radius: 10px;
+    div {
+      margin: auto;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1.5;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px 0;
+    padding-right: 16px;
+    border-top: 1px solid rgba(0, 0, 0, .08);
+  }
+}
+
+.friends {
+  &-name {
+    width: 280px;
+    font-size: 18px;
+  }
+  &-age {
+    font-size: 18px;
+  }
+  &-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
