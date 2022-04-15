@@ -8,7 +8,7 @@ const Friends = () => {
 
   const addFriend = () => {
     axios
-      .post("http://localhost:3001/addfriend", {
+      .post("https://mern-test-crud.herokuapp.com/addfriend", {
         name: name,
         age: age,
       })
@@ -28,7 +28,7 @@ const Friends = () => {
     const newAge = prompt("Введите новый возраст");
 
     axios
-      .put("http://localhost:3001/update", {
+      .put("https://mern-test-crud.herokuapp.com/update", {
         newAge: newAge,
         id: id,
       })
@@ -44,7 +44,7 @@ const Friends = () => {
   };
 
   const deleteFriend = (id) => {
-    axios.delete(`http://localhost:3001/delete/${id}`).then(() => {
+    axios.delete(`https://mern-test-crud.herokuapp.com/delete/${id}`).then(() => {
       setListOfFriends(
         listOfFriends.filter((val) => {
           return val._id !== id;
@@ -55,7 +55,7 @@ const Friends = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/read")
+      .get("https://mern-test-crud.herokuapp.com/read")
       .then((res) => {
         setListOfFriends(res.data);
       })
